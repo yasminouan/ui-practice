@@ -1,0 +1,170 @@
+/* --- CONFIGURATION GLOBALE & ARRIÈRE-PLAN --- */
+body {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #b3c2f2; /* Fond d'écran clair pour faire ressortir la carte */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial Black', 'Arial Bold', sans-serif; /* Style de police un peu épais */
+}
+
+/* --- LA CARTE PRINCIPALE --- */
+.register-card {
+    background: #2b004a; /* Violet très foncé */
+    /* Dégradé discret en bas pour imiter les formes géométriques de l'image */
+    background-image: linear-gradient(135deg, #2b004a 75%, #410a6f 100%);
+    
+    padding: 40px 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Titre principal */
+.register-card h2 {
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    margin-top: 5px;
+}
+
+/* --- STRUCTURE DES CHAMPS (INPUT + ICONE) --- */
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #4c126b; /* Violet intermédiaire pour les champs */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 4px 8px;
+    transition: background-color 0.3s;
+}
+
+/* Le rond blanc qui contient l'icône */
+.icon-container {
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0; /* Empêche le cercle de se déformer */
+}
+
+.icon-container i {
+    color: #4c126b; /* L'icône prend la couleur du fond du champ */
+    font-size: 16px;
+}
+
+/* La zone de texte de l'input */
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 12px 5px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: sans-serif; /* Écriture plus fine et lisible pour la saisie */
+    outline: none;
+}
+
+/* Changement de couleur au survol/clic du champ */
+.input-group:focus-within {
+    background-color: #5d1882;
+}
+
+/* Style du placeholder (texte d'explication) */
+.input-group input::placeholder {
+    color: #cca3e3; /* Rose/violet très clair */
+    opacity: 0.9;
+}
+
+/* --- STYLISATION DES CHECKBOXES PERSONNALISÉES --- */
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    gap: 10px;
+}
+
+.custom-checkbox {
+    color: #bca0dc; /* Violet clair pour le texte secondaire */
+    font-size: 10px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* On cache la checkbox carrée par défaut du navigateur */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Création du cercle de coche violet brillant */
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: #6e2094;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.checkmark i {
+    color: #ffffff;
+    font-size: 10px;
+    display: none; /* Caché par défaut */
+}
+
+/* Quand on coche, on anime la checkbox */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #a63cc9; /* Devient plus flash/lumineux */
+    box-shadow: 0 0 8px rgba(166, 60, 201, 0.6);
+}
+
+.custom-checkbox input:checked ~ .checkmark i {
+    display: block; /* L'icône de coche apparaît */
+}
+
+/* --- LE BOUTON REGISTER --- */
+.btn-register {
+    width: 60%; /* Plus étroit que la carte, comme sur l'image */
+    background-color: #a63cc9; /* Violet fuchsia brillant */
+    color: #ffffff;
+    border: none;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-register:hover {
+    background-color: #ba47e0;
+}
+
+.btn-register:active {
+    transform: scale(0.98); /* Petit effet de pression au clic */
+}
